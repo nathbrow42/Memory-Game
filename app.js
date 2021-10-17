@@ -63,7 +63,7 @@ document.addEventListener('DOMContentLoaded', () => {
     //create board
     function createBoard() {
         for (let i = 0; i < cardArray.length; i++) {
-            var card = document.createElement('img');
+            const card = document.createElement('img');
             card.setAttribute('src', 'images/cover-image.jpg');
             card.setAttribute('data-id', i);
             card.addEventListener('click', flipCard);
@@ -75,7 +75,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     //check match
     function checkForMatch() {
-        var cards = document.querySelectorAll('img');
+        const cards = document.querySelectorAll('img');
         const optionOneId = cardsChosenId[0];
         const optionTwoId = cardsChosenId[1];
 
@@ -100,7 +100,7 @@ document.addEventListener('DOMContentLoaded', () => {
     //flip card
     function flipCard() {
         var cardId = this.getAttribute('data-id');
-        cardsChosen.push(cardArray[cardId]);
+        cardsChosen.push(cardArray[cardId].name);
         cardsChosenId.push(cardId);
         this.setAttribute('src', cardArray[cardId].img);
         if (cardsChosen.length === 2) {
